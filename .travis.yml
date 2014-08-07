@@ -3,7 +3,9 @@ android:
   components:
     - build-tools-20.0.0
     - android-20
+    - sys-img-armeabi-v7a-android-19
+    - sys-img-x86-android-19    
   script:
       - echo "Travis branch is $TRAVIS_BRANCH"
       - echo "Travis branch is in pull request $TRAVIS_PULL+REQUEST"
-      - gradle build
+      - gradle build connectedCheck
