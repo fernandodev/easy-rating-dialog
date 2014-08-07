@@ -1,7 +1,8 @@
 Easy Rating Dialog [![Build Status](https://travis-ci.org/fernandodev/easy-rating-dialog.svg?branch=v1.0)](https://travis-ci.org/fernandodev/easy-rating-dialog)
 ==
 
-![Easy Rating Dialog](http://i.imgur.com/3m6WCTP.png?1)
+![Easy Rating Dialog Light](http://i.imgur.com/3m6WCTP.png?1)
+![Easy Rating Dialog Dark](http://i.imgur.com/4yCXV7f.png?1)
 
 This lib provides a simple way to display an alert dialog for rating app.
 
