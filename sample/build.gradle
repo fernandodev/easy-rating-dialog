@@ -5,11 +5,14 @@ android {
   buildToolsVersion "20.0.0"
 
   defaultConfig {
-    applicationId "br.fernandodev.easyratingdialog.sample"
+    applicationId "com.github.fernandodev.easyratingdialog.sample"
     minSdkVersion 8
     targetSdkVersion 20
     versionCode 1
     versionName "1.0"
+  }
+  lintOptions {
+    abortOnError false
   }
   buildTypes {
     release {
@@ -20,7 +23,5 @@ android {
 }
 
 dependencies {
-  compile fileTree(dir: 'libs', include: ['*.jar'])
   compile project(':library')
-  compile 'com.android.support:appcompat-v7:19.+'
 }
