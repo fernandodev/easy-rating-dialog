@@ -36,7 +36,7 @@ public class EasyRatingDialog {
   }
 
   public void onStart() {
-    if (wasRated() || neverReminder()) return;
+    if (didRate() || didNeverReminder()) return;
 
     int lauchTimes = mPreferences.getInt(KEY_LAUNCH_TIMES, 0);
     long firstDate = mPreferences.getLong(KEY_FIRST_HIT_DATE, -1L);
@@ -58,7 +58,7 @@ public class EasyRatingDialog {
     }
   }
 
-  public void dontReminder() {
+  public void neverReminder() {
     mPreferences.edit().putBoolean(KEY_NEVER_REMINDER, true).commit();
   }
 
@@ -74,11 +74,11 @@ public class EasyRatingDialog {
     registerDate();
   }
 
-  public boolean wasRated() {
+  public boolean didRate() {
     return mPreferences.getBoolean(KEY_WAS_RATED, false);
   }
 
-  public boolean neverReminder() {
+  public boolean didNeverReminder() {
     return mPreferences.getBoolean(KEY_NEVER_REMINDER, false);
   }
 
@@ -157,7 +157,7 @@ public class EasyRatingDialog {
         .setNegativeButton(R.string.erd_no_thanks, new DialogInterface.OnClickListener() {
           @Override
           public void onClick(DialogInterface dialogInterface, int i) {
-            dontReminder();
+            neverReminder();
           }
         })
         .setNeutralButton(R.string.erd_remind_me_later, new DialogInterface.OnClickListener() {

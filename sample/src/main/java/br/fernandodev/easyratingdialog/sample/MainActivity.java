@@ -7,24 +7,37 @@ import br.fernandodev.easyratingdialog.library.EasyRatingDialog;
 
 public class MainActivity extends Activity {
 
-  EasyRatingDialog ratingDialog;
+  EasyRatingDialog easyRatingDialog;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
-    ratingDialog = new EasyRatingDialog(this);
+    easyRatingDialog = new EasyRatingDialog(this);
+
+
+    EasyRatingDialog.ConditionTrigger conditionTrigger = new EasyRatingDialog.ConditionTrigger() {
+      @Override
+      public boolean shouldShow() {
+        //Your custom condition
+        return false;
+      }
+    };
+
+    easyRatingDialog.setConditionTrigger(conditionTrigger);
+
+
   }
 
   @Override
   protected void onStart() {
     super.onStart();
-    ratingDialog.onStart();
+    easyRatingDialog.onStart();
   }
 
   @Override
   protected void onResume() {
     super.onResume();
-    ratingDialog.showIfNeeded(this);
+    easyRatingDialog.showIfNeeded(this);
   }
 }
