@@ -1,4 +1,4 @@
 <manifest
-  package="br.fernandodev.easyratingdialog.library"
+  package="com.github.fernandodev.easyratingdialog.library"
   xmlns:android="http://schemas.android.com/apk/res/android">
 </manifest>

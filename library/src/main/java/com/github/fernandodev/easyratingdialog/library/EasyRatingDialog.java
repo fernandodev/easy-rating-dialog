@@ -1,4 +1,4 @@
-package br.fernandodev.easyratingdialog.library;
+package com.github.fernandodev.easyratingdialog.library;
 
 import android.app.Activity;
 import android.app.AlertDialog;

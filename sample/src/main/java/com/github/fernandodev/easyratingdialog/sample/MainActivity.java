@@ -1,9 +1,10 @@
-package br.fernandodev.easyratingdialog.sample;
+package com.github.fernandodev.easyratingdialog.sample;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-import br.fernandodev.easyratingdialog.library.EasyRatingDialog;
+import com.github.fernandodev.easyratingdialog.library.EasyRatingDialog;
+import com.github.fernandodev.easyratingdialog.sample.R;
 
 public class MainActivity extends Activity {
 
@@ -14,19 +15,6 @@ public class MainActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     easyRatingDialog = new EasyRatingDialog(this);
-
-
-    EasyRatingDialog.ConditionTrigger conditionTrigger = new EasyRatingDialog.ConditionTrigger() {
-      @Override
-      public boolean shouldShow() {
-        //Your custom condition
-        return false;
-      }
-    };
-
-    easyRatingDialog.setConditionTrigger(conditionTrigger);
-
-
   }
 
   @Override
