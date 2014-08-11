@@ -8,8 +8,8 @@ android {
     applicationId "com.github.fernandodev.easyratingdialog.sample"
     minSdkVersion 8
     targetSdkVersion 20
-    versionCode 1
-    versionName "1.0"
+    versionName project.VERSION_NAME
+    versionCode Integer.parseInt(project.VERSION_CODE)
   }
   lintOptions {
     abortOnError false
