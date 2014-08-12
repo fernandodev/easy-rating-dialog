@@ -20,18 +20,25 @@ Default conditions to show:
 
 ## Installation
 
-* Manually
+It's very simple with gradle ;)
 
-Create in your root project folder a folder called `libraries`.
+Add `mavenCentral` as repository source:
 
-Download the library folder and import it into your project and rename `library` to `EasyRatingDialog`.
+```gradle
+repositories {
+  mavenCentral()
+}
+```
 
-Now, to setup with gradle, you need to do the following steps:
+And finnaly add this line inside `dependencies { }` section:
 
-1. In `gradle.settings` add: `':libraries:EasyRatingDialog'`
-2. In `gradle.build` at `dependencies` add `compile project(':libraries:EasyRatingDialog')`
+```gradle
+compile 'com.github.fernandodev.easyratingdialog:easyratingdialog:+'
+```
 
-* Gradle Dependency: _**coming soon**_
+The `+` symbol indicates to gradle to get the latest version.
+
+* See the sample if there are any doubts.
 
 ## Using
 
