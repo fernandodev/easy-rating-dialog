@@ -65,6 +65,7 @@ public class EasyRatingDialog {
   public void rateNow() {
     String appPackage = mContext.getPackageName();
     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackage));
+    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     mContext.startActivity(intent);
     mPreferences.edit().putBoolean(KEY_WAS_RATED, true).commit();
   }
