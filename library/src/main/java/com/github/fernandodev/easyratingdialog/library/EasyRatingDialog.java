@@ -74,6 +74,10 @@ public class EasyRatingDialog {
     registerDate();
   }
 
+  public boolean isShowing() {
+    return mDialog != null && mDialog.isShowing();
+  }
+
   public boolean didRate() {
     return mPreferences.getBoolean(KEY_WAS_RATED, false);
   }
@@ -91,7 +95,7 @@ public class EasyRatingDialog {
   }
 
   private void tryShow(Context context) {
-    if (mDialog != null && mDialog.isShowing())
+    if (isShowing())
       return;
 
     try {
