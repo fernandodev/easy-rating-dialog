@@ -5,7 +5,6 @@ android {
   buildToolsVersion "20.0.0"
 
   defaultConfig {
-    applicationId "com.github.fernandodev.easyratingdialog.sample"
     minSdkVersion 8
     targetSdkVersion 20
     versionName project.VERSION_NAME
@@ -13,6 +12,11 @@ android {
   }
   lintOptions {
     abortOnError false
+  }
+  productFlavors {
+    sample {
+      applicationId "com.github.fernandodev.easyratingdialog.sample"
+    }
   }
   buildTypes {
     release {

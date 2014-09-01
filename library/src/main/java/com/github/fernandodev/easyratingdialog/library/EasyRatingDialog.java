@@ -1,6 +1,5 @@
 package com.github.fernandodev.easyratingdialog.library;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -48,13 +47,13 @@ public class EasyRatingDialog {
     registerHitCount(++lauchTimes);
   }
 
-  public void showIfNeeded(Activity activity) {
+  public void showIfNeeded() {
     if (mCondition != null) {
       if (mCondition.shouldShow())
-        tryShow(activity);
+        tryShow(mContext);
     } else {
       if (shouldShow())
-        tryShow(activity);
+        tryShow(mContext);
     }
   }
 
@@ -91,23 +90,17 @@ public class EasyRatingDialog {
     mDialog.setCancelable(canceable);
   }
 
-  private void tryShow(Activity activity) {
-    //Recycle dialog with current activity
-    //References to activities are potentially problematics
-    //and dialog alert only be created in an Activity context
-    //
+  private void tryShow(Context context) {
     if (mDialog != null && mDialog.isShowing())
-      mDialog.dismiss();
+      return;
 
-    //Window token may expire at the end of activity
-    //So it necessary to recreate dialog
     try {
       mDialog = null;
-      mDialog = createDialog(activity);
+      mDialog = createDialog(context);
       mDialog.show();
     } catch (Exception e) {
       //It prevents many Android exceptions
-      //when user interactions conflicts with UI thread
+      //when user interactions conflicts with UI thread or Activity expired window token
       //BadTokenException, IllegalStateException ...
       Log.e(getClass().getSimpleName(), e.getMessage());
     }
