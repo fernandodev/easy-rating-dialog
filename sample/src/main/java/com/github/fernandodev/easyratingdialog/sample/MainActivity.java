@@ -2,9 +2,9 @@ package com.github.fernandodev.easyratingdialog.sample;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.github.fernandodev.easyratingdialog.library.EasyRatingDialog;
-import com.github.fernandodev.easyratingdialog.sample.R;
 
 public class MainActivity extends Activity {
 
@@ -26,6 +26,18 @@ public class MainActivity extends Activity {
   @Override
   protected void onResume() {
     super.onResume();
-    easyRatingDialog.showIfNeeded(this);
+    easyRatingDialog.showIfNeeded();
+  }
+
+  public void onClickRateNow(View view) {
+    easyRatingDialog.rateNow();
+  }
+
+  public void onClickNeverReminder(View view) {
+    easyRatingDialog.neverReminder();
+  }
+
+  public EasyRatingDialog getEasyRatingDialog() {
+    return easyRatingDialog;
   }
 }
