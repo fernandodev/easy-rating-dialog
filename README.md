@@ -11,11 +11,19 @@ Default conditions to show:
 1. User opened the app more than 5 times
 2. User opened the app after 7 days of first opening.
 
-- [Easy Rating Dialog](#easy-rating-dialog)
+- [Easy Rating Dialog](#easy-rating-dialog-!build-statushttpstravis-ciorgfernandodeveasy-rating-dialogsvgbranch=masterhttpstravis-ciorgfernandodeveasy-rating-dialog)
   - [Installation](#installation)
   - [Using](#using)
   - [Tips](#tips)
-  - [How to contribute?](#how-to-contribute)
+    - [Condition triggers](#condition-triggers)
+    - [Useful public methods](#useful-public-methods)
+    - [Internationalization](#internationalization)
+    - [Constants](#constants)
+  - [Dagger Issues](#dagger-issues)
+  - [Samples Usage](#samples-usage)
+  - [Testing](#testing)
+  - [Showcase](#showcase)
+  - [Change Logs](#change-logs)
   - [License](#license)
 
 ## Installation
@@ -71,9 +79,11 @@ And to show when needed just call in `onResume`:
 @Override
 protected void onResume() {
   super.onResume();
-  easyRatingDialog.showIfNeeded(this);
+  easyRatingDialog.showIfNeeded();
 }
 ```
+
+* all **exceptions** are catched when dialog tries to show because I assume the app running is more important than to show the dialog.
 
 ## Tips
 
@@ -148,6 +158,78 @@ And override the values:
   <integer name="erd_max_days_after">14</integer>
 </resources>
 ```
+
+## Dagger Issues
+
+If you are using dagger pay attention to some items.
+
+One, you must provide an Activity Context to EasyRatingDialog to show the dialog. So you can do this as 
+below:
+
+```java
+@Provides EasyRatingDialog provideRatingDialog(@ForActivity Context context) {
+  return new EasyRatingDialog(context);
+}
+```
+
+where `@ForActivity` is an interface that overrides other contexts provided by other modules.
+
+```java
+@Qualifier @Retention(RUNTIME)
+  public @interface ForActivity {
+}
+```
+
+Otherwise if you provide other context and try to show an execption can be occur because dialogs only can be
+attached to Activity's context.
+
+The code below prevents you to get a BadTokenException exception
+`E/EasyRatingDialog﹕ Unable to add window -- token android.os.BinderProxy@536c3920 is not valid; is your activity running?`
+
+```java
+@Provides @ForActivity Context provideActivityContext() {
+  return activity;
+}
+```
+
+If you use `@Singleton annotation to provide the Activity's context a BadTokenException can be occur after restoring from background.
+
+Remember, all **exceptions** are catched when dialog tries to show because 
+I assume the app running is more important than to show the dialog.
+
+## Samples Usage
+
+There are two samples, the first is just a simple acitivity that shows the dialog and the second uses dagger injection.
+
+To run samples you can follow steps below
+
+```shell
+$ git clone git@github.com:fernandodev/easy-rating-dialog.git
+$ cd easyratingdialog
+$ ./gradlew installSampleDebug installSampleWithDaggerDebug --daemon
+```
+
+## Testing
+
+There are a simple test for the rating dialog. If you want to contribute check the tests too.
+
+```shell
+$ git clone git@github.com:fernandodev/easy-rating-dialog.git
+$ cd easyratingdialog
+$ ./gradlew assembleSampleDebugTest connectedAndroidTestSampleDebug --daemon
+```
+
+You must open an emulator before.
+
+## Showcase
+
+Have you used my library in your project? Tell me and I'll sponsor your app here ;)
+
+* [I Ching - The Oracle](https://play.google.com/store/apps/details?id=com.creativecode.iching)
+
+## Change Logs
+
+See [Change Logs file](https://github.com/fernandodev/easy-rating-dialog/blob/master/CHANGELOGS.md).
 
 ## License
 
