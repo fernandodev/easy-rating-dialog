@@ -1,4 +1,4 @@
-Easy Rating Dialog [![Build Status](https://travis-ci.org/fernandodev/easy-rating-dialog.svg?branch=master)](https://travis-ci.org/fernandodev/easy-rating-dialog)
+Easy Rating Dialog [![Build Status](https://travis-ci.org/fernandodev/easy-rating-dialog.svg?branch=master)](https://travis-ci.org/fernandodev/easy-rating-dialog)[![Android Arsenal](http://img.shields.io/badge/Android%20Arsenal-easy--rating--dialog-blue.svg?style=flat)](http://android-arsenal.com/details/1/844)
 ==
 
 ![Easy Rating Dialog Light](http://i.imgur.com/3m6WCTP.png?1)
