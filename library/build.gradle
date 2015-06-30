@@ -1,19 +1,28 @@
 apply plugin: 'com.android.library'
 
 android {
-  compileSdkVersion 20
-  buildToolsVersion "20.0.0"
+  compileSdkVersion projectCompileSdkVersion
+  buildToolsVersion projectBuildToolsVersion
 
   defaultConfig {
-    applicationId "com.github.fernandodev.easyratingdialog.library"
-    minSdkVersion 8
-    targetSdkVersion 20
+    minSdkVersion projectMinSdkVersion
+    targetSdkVersion projectCompileSdkVersion
     versionName project.VERSION_NAME
     versionCode Integer.parseInt(project.VERSION_CODE)
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
   }
   lintOptions {
     abortOnError false
   }
+}
+
+dependencies {
+  compile 'com.afollestad:material-dialogs:0.7.6.0'
 }
 
 apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
