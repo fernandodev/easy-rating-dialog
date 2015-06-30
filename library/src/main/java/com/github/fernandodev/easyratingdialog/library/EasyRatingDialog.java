@@ -1,12 +1,15 @@
 package com.github.fernandodev.easyratingdialog.library;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.util.Log;
+
+import com.afollestad.materialdialogs.AlertDialogWrapper;
 
 import java.util.Date;
 
@@ -21,7 +24,7 @@ public class EasyRatingDialog {
   Context mContext;
   SharedPreferences mPreferences;
   ConditionTrigger mCondition;
-  AlertDialog mDialog;
+  Dialog mDialog;
 
   private static final String PREFS_NAME = "erd_rating";
   private static final String KEY_WAS_RATED = "KEY_WAS_RATED";
@@ -148,8 +151,8 @@ public class EasyRatingDialog {
     return (lastDate - firstDate) / (1000 * 60 * 60 * 24);
   }
 
-  private android.app.AlertDialog createDialog(Context context) {
-    return new AlertDialog.Builder(context)
+  private android.app.Dialog createDialog(Context context) {
+    return new AlertDialogWrapper.Builder(context)
         .setTitle(R.string.erd_title)
         .setMessage(R.string.erd_message)
         .setNegativeButton(R.string.erd_no_thanks, new DialogInterface.OnClickListener() {

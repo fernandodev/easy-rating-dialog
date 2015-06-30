@@ -1,28 +1,34 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:0.12.+'
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:1.2.3'
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
+    // NOTE: Do not place your application dependencies here; they belong
+    // in the individual module build.gradle files
+  }
 }
 
 def isReleaseBuild() {
-    return version.contains("SNAPSHOT") == false
+  return version.contains("SNAPSHOT") == false
 }
 
 allprojects {
-    version = VERSION_NAME
-    group = GROUP
+  version = VERSION_NAME
+  group = GROUP
 
-    repositories {
-        jcenter()
-    }
+  repositories {
+    jcenter()
+  }
+
+  ext {
+    projectBuildToolsVersion = BUILD_TOOLS_VERSION
+    projectMinSdkVersion = Integer.parseInt(MIN_SDK_VERSION)
+    projectCompileSdkVersion = Integer.parseInt(COMPILE_SDK_VERSION)
+  }
 }
 
 apply plugin: 'android-reporting'
