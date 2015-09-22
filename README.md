@@ -45,6 +45,16 @@ compile 'com.github.fernandodev.easyratingdialog:easyratingdialog:+'
 
 The `+` symbol indicates to gradle to get the latest version.
 
+**ATTENTION**
+
+If you are using [afollestad:material-dialogs](https://github.com/afollestad/material-dialogs) you must esclude this module from EasyRatingDialog lib to avoid lib conflicting:
+
+```gradle
+  compile('com.github.fernandodev.easyratingdialog:easyratingdialog:1.1.0') {
+    exclude module: 'material-dialogs'
+  }
+```
+
 * See the sample if there are any doubts.
 
 ## Using
