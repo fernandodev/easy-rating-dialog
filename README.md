@@ -43,7 +43,8 @@ And finnaly add this line inside `dependencies { }` section:
 compile 'com.github.fernandodev.easyratingdialog:easyratingdialog:+'
 ```
 
-The `+` symbol indicates to gradle to get the latest version.
+* The `+` symbol indicates to gradle to get the latest version.
+* Current version: `1.1.1`
 
 **ATTENTION**
 
@@ -110,7 +111,7 @@ EasyRatingDialog.ConditionTrigger conditionTrigger = new EasyRatingDialog.Condit
 };
 
 easyRatingDialog.setConditionTrigger(conditionTrigger);
-``` 
+```
 
 ### Useful public methods
 
@@ -133,7 +134,7 @@ public void onClickRateNow() {
 
 You can do it for `neverRemider()` and `remindMeLater()` actions too.
 
-To check stored values just call `didNeverReminder()`, `didRate()`. 
+To check stored values just call `didNeverReminder()`, `didRate()`.
 
 ### Internationalization
 
@@ -172,7 +173,7 @@ And override the values:
 
 If you are using dagger pay attention to some items.
 
-One, you must provide an Activity Context to EasyRatingDialog to show the dialog. So you can do this as 
+One, you must provide an Activity Context to EasyRatingDialog to show the dialog. So you can do this as
 below:
 
 ```java
@@ -203,7 +204,7 @@ The code below prevents you to get a BadTokenException exception
 
 If you use `@Singleton annotation to provide the Activity's context a BadTokenException can be occur after restoring from background.
 
-Remember, all **exceptions** are catched when dialog tries to show because 
+Remember, all **exceptions** are catched when dialog tries to show because
 I assume the app running is more important than to show the dialog.
 
 ## Samples Usage
