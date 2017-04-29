@@ -236,8 +236,7 @@ You must open an emulator before.
 Have you used my library in your project? Tell me and I'll sponsor your app here ;)
 
 * [I Ching - The Oracle](https://play.google.com/store/apps/details?id=com.creativecode.iching)
-* [Say It! - English Learning](https://play.google.com/store/apps/details?id=com.cesarsk.say_it) : An Android App aimed to improve your English Pronunciation. 
- * [Github Page](https://github.com/cesarsk/say_it)
+* [Say It! - English Learning](https://play.google.com/store/apps/details?id=com.cesarsk.say_it) : An Android App aimed to improve your English Pronunciation. *[Github Page](https://github.com/cesarsk/say_it)
 
 ## Change Logs
 
