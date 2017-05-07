@@ -22,7 +22,7 @@ android {
 }
 
 dependencies {
-    compile('com.github.afollestad.material-dialogs:core:0.8.5.6@aar') {
+    compile('com.android.support:appcompat-v7:25.3.1') {
         transitive = true
     }
 }

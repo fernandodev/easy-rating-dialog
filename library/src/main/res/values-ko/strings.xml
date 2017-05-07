@@ -1,7 +1,7 @@
 <resources>
-  <string name="erd_title">앱을 평가</string>
-  <string name="erd_message">안녕하세요, 더 많은 새로운 기능과 기능 향상을 위해 1분 정도 시간을 내서 앱을 평가해주세요. ;)</string>
-  <string name="erd_no_thanks">아니오, 괜찮습니다</string>
-  <string name="erd_remind_me_later">나중에 하기</string>
-  <string name="erd_rate_now">지금 평가</string>
+    <string name="erd_title">앱을 평가</string>
+    <string name="erd_message">안녕하세요, 더 많은 새로운 기능과 기능 향상을 위해 1분 정도 시간을 내서 앱을 평가해주세요. ;)</string>
+    <string name="erd_no_thanks">아니오, 괜찮습니다</string>
+    <string name="erd_remind_me_later">나중에 하기</string>
+    <string name="erd_rate_now">지금 평가</string>
 </resources>
