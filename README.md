@@ -10,6 +10,8 @@ Default conditions to show:
 1. User opened the app more than 5 times
 2. User opened the app after 7 days of first opening.
 
+* Please Note: The lastest version uses AppCompat. Your application Theme has to be inherited from *Theme.AppCompat*
+
 - [Easy Rating Dialog](#easy-rating-dialog-!build-statushttpstravis-ciorgfernandodeveasy-rating-dialogsvgbranch=masterhttpstravis-ciorgfernandodeveasy-rating-dialog)
   - [Installation](#installation)
   - [Using](#using)
@@ -18,6 +20,7 @@ Default conditions to show:
     - [Useful public methods](#useful-public-methods)
     - [Internationalization](#internationalization)
     - [Constants](#constants)
+    - [Theme](#theme)
   - [Dagger Issues](#dagger-issues)
   - [Samples Usage](#samples-usage)
   - [Testing](#testing)
@@ -37,7 +40,7 @@ repositories {
 }
 ```
 
-And finnaly add this line inside `dependencies { }` section:
+And finally add this line inside `dependencies { }` section:
 
 ```gradle
 compile 'com.github.fernandodev.easyratingdialog:easyratingdialog:+'
@@ -166,6 +169,34 @@ And override the values:
 <resources>
   <integer name="erd_launch_times">10</integer>
   <integer name="erd_max_days_after">14</integer>
+</resources>
+```
+
+### Theme
+
+You can customize the alert dialog using style settings:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat">
+        <item name="alertDialogTheme">@style/AlertDialogTheme</item>
+    </style>
+
+    <!--You can customize dialog theme as below-->
+
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">#f00</item>
+    </style>
+
+    <style name="PositiveButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">#00f</item>
+    </style>
 </resources>
 ```
 
