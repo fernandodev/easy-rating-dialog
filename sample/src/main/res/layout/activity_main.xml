@@ -14,12 +14,21 @@
         android:textSize="40sp" />
 
     <Button
+        android:id="@+id/show_anyway"
+        android:text="Show Anyway"
+        android:onClick="onClickShowAnyway"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" />
+
+    <Button
         android:id="@+id/rate_now"
         android:text="Rate Now"
         android:onClick="onClickRateNow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/show_anyway"
         android:layout_centerHorizontal="true" />
 
     <Button

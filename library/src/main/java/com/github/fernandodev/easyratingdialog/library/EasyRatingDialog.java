@@ -48,6 +48,10 @@ public class EasyRatingDialog {
         registerHitCount(++launchTimes);
     }
 
+    public void showAnyway() {
+        tryShow(mContext);
+    }
+
     public void showIfNeeded() {
         if (mCondition != null) {
             if (mCondition.shouldShow())
