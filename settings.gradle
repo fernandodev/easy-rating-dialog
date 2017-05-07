@@ -1,1 +1,1 @@
-include ':sample', ':library', ':samplewithdagger'
+include ':sample', ':library'
