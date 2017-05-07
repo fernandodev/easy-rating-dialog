@@ -1,30 +1,30 @@
 buildscript {
-  repositories {
-    jcenter()
-  }
-  dependencies {
-    classpath 'com.android.tools.build:gradle:2.3.1'
-  }
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.1'
+    }
 }
 
 allprojects {
-  version = VERSION_NAME
-  group = GROUP
+    version = VERSION_NAME
+    group = GROUP
 
-  repositories {
-    jcenter()
-    maven { url "https://jitpack.io" }
-  }
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
 
-  ext {
-    projectBuildToolsVersion = BUILD_TOOLS_VERSION
-    projectMinSdkVersion = Integer.parseInt(MIN_SDK_VERSION)
-    projectCompileSdkVersion = Integer.parseInt(COMPILE_SDK_VERSION)
-  }
+    ext {
+        projectBuildToolsVersion = BUILD_TOOLS_VERSION
+        projectMinSdkVersion = Integer.parseInt(MIN_SDK_VERSION)
+        projectCompileSdkVersion = Integer.parseInt(COMPILE_SDK_VERSION)
+    }
 }
 
 def isReleaseBuild() {
-  return version.contains("SNAPSHOT") == false
+    return version.contains("SNAPSHOT") == false
 }
 
 apply plugin: 'android-reporting'
