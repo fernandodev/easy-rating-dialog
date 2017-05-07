@@ -30,6 +30,10 @@ public class MainActivity extends Activity {
         easyRatingDialog.showIfNeeded();
     }
 
+    public void onClickShowAnyway(View view) {
+        easyRatingDialog.showAnyway();
+    }
+
     public void onClickRateNow(View view) {
         easyRatingDialog.rateNow();
     }

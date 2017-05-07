@@ -1,7 +1,7 @@
 Easy Rating Dialog [![Build Status](https://travis-ci.org/fernandodev/easy-rating-dialog.svg?branch=master)](https://travis-ci.org/fernandodev/easy-rating-dialog)[![Android Arsenal](http://img.shields.io/badge/Android%20Arsenal-easy--rating--dialog-blue.svg?style=flat)](http://android-arsenal.com/details/1/844)
 ==
 
-<img src="http://i.imgur.com/t8wSjfU.png" width="320px"><img src="http://i.imgur.com/kbjGqZW.png" width="320px">
+<img src="https://raw.githubusercontent.com/fernandodev/easy-rating-dialog/master/screenshots/device-2017-05-07-185513.png" width="320px">
 
 This lib provides a simple way to display an alert dialog for rating app.
 
