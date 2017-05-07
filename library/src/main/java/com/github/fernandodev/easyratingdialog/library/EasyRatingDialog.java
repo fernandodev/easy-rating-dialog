@@ -18,13 +18,13 @@ import java.util.Date;
  */
 public class EasyRatingDialog {
   public interface ConditionTrigger {
-    public boolean shouldShow();
+    boolean shouldShow();
   }
 
-  Context mContext;
-  SharedPreferences mPreferences;
-  ConditionTrigger mCondition;
-  Dialog mDialog;
+  private Context mContext;
+  private SharedPreferences mPreferences;
+  private ConditionTrigger mCondition;
+  private Dialog mDialog;
 
   private static final String PREFS_NAME = "erd_rating";
   private static final String KEY_WAS_RATED = "KEY_WAS_RATED";
@@ -40,14 +40,14 @@ public class EasyRatingDialog {
   public void onStart() {
     if (didRate() || didNeverReminder()) return;
 
-    int lauchTimes = mPreferences.getInt(KEY_LAUNCH_TIMES, 0);
+    int launchTimes = mPreferences.getInt(KEY_LAUNCH_TIMES, 0);
     long firstDate = mPreferences.getLong(KEY_FIRST_HIT_DATE, -1L);
 
     if (firstDate == -1L) {
       registerDate();
     }
 
-    registerHitCount(++lauchTimes);
+    registerHitCount(++launchTimes);
   }
 
   public void showIfNeeded() {
@@ -61,7 +61,7 @@ public class EasyRatingDialog {
   }
 
   public void neverReminder() {
-    mPreferences.edit().putBoolean(KEY_NEVER_REMINDER, true).commit();
+    mPreferences.edit().putBoolean(KEY_NEVER_REMINDER, true).apply();
   }
 
   public void rateNow() {
@@ -69,7 +69,7 @@ public class EasyRatingDialog {
     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackage));
     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     mContext.startActivity(intent);
-    mPreferences.edit().putBoolean(KEY_WAS_RATED, true).commit();
+    mPreferences.edit().putBoolean(KEY_WAS_RATED, true).apply();
   }
 
   public void remindMeLater() {
@@ -136,7 +136,7 @@ public class EasyRatingDialog {
     mPreferences
         .edit()
         .putInt(KEY_LAUNCH_TIMES, Math.min(hitCount, Integer.MAX_VALUE))
-        .commit();
+        .apply();
   }
 
   private void registerDate() {
@@ -144,7 +144,7 @@ public class EasyRatingDialog {
     mPreferences
         .edit()
         .putLong(KEY_FIRST_HIT_DATE, today.getTime())
-        .commit();
+        .apply();
   }
 
   private long daysBetween(long firstDate, long lastDate) {
