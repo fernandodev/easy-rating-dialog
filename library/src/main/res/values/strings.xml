@@ -1,7 +1,7 @@
 <resources>
-  <string name="erd_title">Rate this app</string>
-  <string name="erd_message">Hi, take a minute to rate this app and help support to improve more new features. ;)</string>
-  <string name="erd_no_thanks">No, thanks</string>
-  <string name="erd_remind_me_later">Remind me later</string>
-  <string name="erd_rate_now">Rate now</string>
+    <string name="erd_title">Rate this app</string>
+    <string name="erd_message">Hi, take a minute to rate this app and help support to improve more new features. ;)</string>
+    <string name="erd_no_thanks">No, thanks</string>
+    <string name="erd_remind_me_later">Remind me later</string>
+    <string name="erd_rate_now">Rate now</string>
 </resources>
