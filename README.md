@@ -269,6 +269,7 @@ Have you used my library in your project? Tell me and I'll sponsor your app here
 * [I Ching - The Oracle](https://play.google.com/store/apps/details?id=com.creativecode.iching)
 * [Say It! - English Learning](https://play.google.com/store/apps/details?id=com.cesarsk.say_it) : An Android App aimed to improve your English Pronunciation. [Github Page](https://github.com/cesarsk/say_it)
 * [Find my car : Last Park](https://play.google.com/store/apps/details?id=com.ages.arabamnerede) : Find My Car allows you to save the exact location of your parked car so you can later remember where it's.
+* [App permissions](https://play.google.com/store/apps/details?id=in.arjsna.permissionchecker) - App to see details of permissions required by all the installed apps [Github Page](https://github.com/Arjun-sna/android-permission-checker-app)
 
 ## Change Logs
 
